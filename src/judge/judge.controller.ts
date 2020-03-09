@@ -19,10 +19,6 @@ export class JudgeController {
     @Inject('JUDGE_CENTER') private readonly client: ClientProxy,
   ) {}
 
-  async onApplicationBootstrap() {
-    await this.client.connect();
-  }
-
   @Get()
   getRenderTree(): Observable<string> {
     const pattern = { cmd: 'getRenderTree' };
